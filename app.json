@@ -1,0 +1,168 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "au.com.smarthome",
+  "version": "1.0.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#c71c24",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "SmartHome"
+  },
+  "description": {
+    "en": "Welcome to a new era of home automation with SmartHome Australia... our goal is to make your home smarter, more convenient and energy-efficient. Our Homey app offers seamless control of our growing range of smart devices, bringing comfort and intelligence to every corner of your home."
+  },
+  "category": [
+    "lights"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "Grant Slender",
+    "email": "gslender@gmail.com"
+  },
+  "source": "https://github.com/gslender/au.com.smarthome",
+  "bugs": {
+    "url": "https://github.com/gslender/au.com.smarthome/issues"
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Smart Plug (KSP1EM)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "meter_power",
+        "measure_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_zfijnotz"
+        ],
+        "productId": [
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              1794,
+              2820,
+              57344,
+              57345
+            ],
+            "bindings": [
+              10,
+              25
+            ]
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "large": "/drivers/smart plug/assets/images/large.png",
+        "small": "/drivers/smart plug/assets/images/small.png"
+      },
+      "id": "smart plug",
+      "settings": [
+        {
+          "id": "metering_offset",
+          "type": "number",
+          "label": {
+            "en": "Metering Correction Factor"
+          },
+          "hint": {
+            "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0.8,
+            "max": 1.2,
+            "step": 0.1
+          }
+        },
+        {
+          "id": "measure_offset",
+          "type": "number",
+          "label": {
+            "en": "Measure Correction Factor"
+          },
+          "hint": {
+            "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0.8,
+            "max": 1.2,
+            "step": 0.1
+          }
+        },
+        {
+          "id": "minReportPower",
+          "type": "number",
+          "label": {
+            "en": "Min report interval for power (s)"
+          },
+          "hint": {
+            "en": "Min interval before a report is sent to Homey (s)"
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 10,
+            "max": 86400
+          }
+        },
+        {
+          "id": "minReportCurrent",
+          "type": "number",
+          "label": {
+            "en": "Min report interval for current (s)"
+          },
+          "hint": {
+            "en": "Min interval before a report is sent to Homey (s)"
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 10,
+            "max": 86400
+          }
+        },
+        {
+          "id": "minReportVoltage",
+          "type": "number",
+          "label": {
+            "en": "Min report interval for voltage (s)"
+          },
+          "hint": {
+            "en": "Min interval before a report is sent to Homey (s)"
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 10,
+            "max": 86400
+          }
+        }
+      ]
+    }
+  ]
+}

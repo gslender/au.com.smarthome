@@ -1,0 +1,13 @@
+{
+  "name": "au.com.smarthome",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {},
+  "devDependencies": {
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.9"
+  },
+  "dependencies": {
+    "homey-zigbeedriver": "^2.1.4",
+    "zigbee-clusters": "^2.4.1"
+  }
+}
